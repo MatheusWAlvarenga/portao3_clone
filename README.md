@@ -51,28 +51,22 @@ Isso iniciará o servidor em http://localhost:3000.
 
 ## Correção de Erros e Adições
 
-Neste projeto, foram corrigidos os seguintes erros na página original:
+Neste projeto, foram corrigidos os seguintes erros da página original:
 
-- Menu
-    - Correção no espaçamento durante hover dos elementos;
-    - Correção na visualização do dropdow do seletor;
-    - Seleção correta do item correspondente a página atual;
-
-- Home
-    - Correção na responsividade da página;
-    - Correção nas imagens de ilustrações de cards;
+- Correção na responsividade da página;
+- Correção nas imagens de ilustrações de cards;
+- Correção no espaçamento durante hover dos elementos;
+- Correção na visualização do dropdown do seletor;
+- Seleção correta do item correspondente à página atual.
 
 Além disso, foram adicionadas implementações para tornar a página mais atraente para os usuários, incluindo:
 
-- Menu
-    - Adicionado animação no componente selector;
-    - Adicionado icone do menu reduzido;
-      
-- Home
-    - Implementado animação em imagens;
-    - Implementado animação em cards;
-      
+- Adicionado animação no componente selector;
+- Adicionado ícone do menu reduzido.
+- Implementado animações em imagens;
+- Implementado animações em cards.
 
+      
 ## Contribuindo
 
 Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novos recursos para este projeto. Para contribuir, siga estas etapas:
@@ -98,3 +92,5 @@ Se você tiver alguma dúvida ou quiser entrar em contato, você pode me encontr
 ##
 
 ![NEXT.JS](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white) ![Type Script](	https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![TAILWIND CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+
