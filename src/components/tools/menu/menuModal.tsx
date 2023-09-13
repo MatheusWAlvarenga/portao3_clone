@@ -16,6 +16,7 @@ interface MenuModalProps {
   handleClick: (item: number) => void
   handleCloseSelect: (item: boolean) => void
   handleEffectInSelectOption: (item: number) => void
+  setMenuOpen: () => void
 }
 
 type ItemsType = {
@@ -43,9 +44,11 @@ export function MenuModal({
   handleClick,
   handleCloseSelect,
   handleEffectInSelectOption,
+  setMenuOpen,
 }: MenuModalProps) {
   return (
     <div
+      onMouseLeave={() => setMenuOpen}
       className={` ${
         menuOpen ? 'flex  min-w-[10rem]' : 'hidden'
       }  flex-col z-30 fixed bg-white bg-pointer-events-auto p-4 gap-1 right-[4%] sm:right-[5%] md:right-[6%] tablet:right-[7%] lg:right-[8%] desktop:right-[9%] monitor:right-[16%]  mt-14 border border-inHover border-opacity-20 shadow-lg rounded-lg`}

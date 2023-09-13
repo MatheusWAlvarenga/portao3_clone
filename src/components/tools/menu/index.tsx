@@ -1,7 +1,7 @@
 'use client'
 
 // vendors
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
@@ -11,13 +11,34 @@ import { MdKeyboardArrowRight, MdMenu } from 'react-icons/md'
 // components
 import { MenuModal } from './menuModal'
 
+// contexts
+import { ContextGlobalElements } from '@/context/global'
+
 export function Menu() {
+  const { controlMenuOpen, menuOpen } = useContext(ContextGlobalElements)
+  const wrapperRef = useRef(null)
   const pathname = usePathname()
   const [selected, setSelected] = useState(1)
   const [selectCurrent, setSelectCurrent] = useState(1)
   const [hoverItem, setHoverItem] = useState(0)
-  const [menuOpen, setMenuOpen] = useState(false)
   const [effectSelectOption, setEffectSelectOption] = useState(0)
+
+  function useOutsideAlerter(ref: any) {
+    useEffect(() => {
+      function handleClickOutside(event: any) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          if (menuOpen) controlMenuOpen(false)
+        }
+      }
+
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }, [ref])
+  }
+
+  useOutsideAlerter(wrapperRef)
 
   const menuItems = [
     {
@@ -92,7 +113,7 @@ export function Menu() {
 
   function handleCloseSelect(closeCompactMenu?: boolean) {
     setSelectCurrent(0)
-    if (closeCompactMenu) setMenuOpen(false)
+    if (closeCompactMenu) controlMenuOpen(false)
   }
 
   useEffect(() => {
@@ -110,11 +131,11 @@ export function Menu() {
   function handleMenuOpen() {
     if (selected != 0) setSelected(0)
 
-    setMenuOpen((before) => !before)
+    controlMenuOpen()
   }
 
   return (
-    <div className='flex font-montserrat font-semibold'>
+    <div ref={wrapperRef} className='flex font-montserrat font-semibold'>
       <div className='hidden desktop:flex gap-8'>
         {menuItems.map((item) => {
           if (item.type === 'select') {
@@ -221,6 +242,7 @@ export function Menu() {
             handleClick={handleClick}
             handleCloseSelect={handleCloseSelect}
             handleEffectInSelectOption={handleEffectInSelectOption}
+            setMenuOpen={handleMenuOpen}
           />
         )}
       </div>

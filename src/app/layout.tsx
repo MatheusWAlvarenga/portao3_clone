@@ -1,5 +1,7 @@
 // vendors
 import type { Metadata } from 'next'
+
+// fonts
 import { Montserrat } from 'next/font/google'
 
 // style
@@ -10,11 +12,14 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { MoreButton } from '@/components/tools/moreButton'
 
-// font config
+// fonts config
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
 })
+
+// contexts
+import { ContextGlobal } from '@/context/global'
 
 // metadata config
 export const metadata: Metadata = {
@@ -32,15 +37,16 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} selection:bg-selection-primary selection:text-white`}
       >
-        <div className='flex w-full fixed z-50'>
-          <Header />
-        </div>
-        {children}
-        <Footer />
-
-        <div className='flex desktop:hidden fixed z-30 bottom-1 md:bottom-5 w-full justify-center items-center'>
-          <MoreButton />
-        </div>
+        <ContextGlobal>
+          <div className='flex w-full fixed z-50'>
+            <Header />
+          </div>
+          {children}
+          <Footer />
+          <div className='flex desktop:hidden fixed z-30 bottom-1 md:bottom-5 w-full justify-center items-center'>
+            <MoreButton />
+          </div>
+        </ContextGlobal>
       </body>
     </html>
   )
