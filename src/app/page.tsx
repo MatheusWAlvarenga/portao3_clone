@@ -1,7 +1,4 @@
 'use client'
-// vendors
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
 
 // components
 import { CardHome_1 } from '@/components/cards/home/card-1'

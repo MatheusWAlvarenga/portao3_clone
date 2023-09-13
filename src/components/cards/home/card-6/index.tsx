@@ -33,7 +33,7 @@ export function CardHome_6() {
 
   return (
     <div className='flex flex-col justify-center items-center bg-base gap-10 py-10 sm:py-20 lg:py-28 w-full '>
-      <div className='flex flex-col gap-2 w-full justify-center items-center py-4 sm:py-6 border-b border-opacity-20 border-line sm:border-transparent'>
+      <div className='flex flex-col gap-2 w-full justify-center items-center py-4 sm:py-6'>
         <p className='w-full px-[10%]  justify-center items-center text-textCard text-center font-montserrat font-medium text-2xl tablet:text-4xl'>
           Fácil de implementar, simples de usar
         </p>

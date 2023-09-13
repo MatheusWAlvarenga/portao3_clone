@@ -40,7 +40,7 @@ export function CardHome_1() {
         <AnimatedImage />
       </div>
       <div className='flex flex-col h-[12rem] pb-4 w-full bg-personal'>
-        <div className='flex w-full justify-center items-center py-4 sm:py-6 border-b border-opacity-20 border-line sm:border-transparent'>
+        <div className='flex w-full justify-center items-center py-4 sm:py-6'>
           <p className='w-full px-[10%] lg:px-[23%] justify-center items-center text-white text-center font-montserrat text-[1rem] tablet:text-lg'>
             Usada e aprovada por <b>mais de 600 empresas</b> de destaque
           </p>

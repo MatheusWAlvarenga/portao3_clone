@@ -37,9 +37,10 @@ export default function RootLayout({
         </div>
         {children}
         <Footer />
+
         <div className='flex desktop:hidden fixed z-30 bottom-1 md:bottom-5 w-full justify-center items-center'>
-        <MoreButton />
-      </div>
+          <MoreButton />
+        </div>
       </body>
     </html>
   )
