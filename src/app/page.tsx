@@ -14,6 +14,7 @@ import { CardHome_7 } from '@/components/cards/home/card-7'
 import { CardHome_8 } from '@/components/cards/home/card-8'
 import { CardHome_9 } from '@/components/cards/home/card-9'
 import { CardHome_10 } from '@/components/cards/home/card-10'
+import { MoreButton } from '@/components/tools/moreButton'
 
 export default function Home() {
   return (
@@ -28,6 +29,9 @@ export default function Home() {
       <CardHome_8 />
       <CardHome_9 />
       <CardHome_10 />
+      <div className='flex desktop:hidden fixed z-30 bottom-1 md:bottom-5 w-full justify-center items-center'>
+        <MoreButton />
+      </div>
     </main>
   )
 }

@@ -55,7 +55,7 @@ export function Footer() {
     },
   ]
   return (
-    <main className='flex flex-col gap-4 desktop:gap-2 px-[2%] sm:px-[4%] md:px-[8%] tablet:px-[10%] lg:px-[12%] desktop:px-[15%] monitor:px-[22%] py-[1rem] justify-center items-center w-full min-h-[28rem] bg-footer-background  divide-y-2 divide-footer-line'>
+    <main className='flex flex-col gap-4 desktop:gap-2 px-[2%] sm:px-[4%] md:px-[8%] tablet:px-[10%] lg:px-[12%] desktop:px-[15%] monitor:px-[22%] py-[1rem] justify-center items-center w-full min-h-[28rem] bg-footer-background  divide-y-2 divide-footer-line pb-14 md:pb-[5rem] desktop:pb-0'>
       <div className='flex flex-col tablet:flex-row gap-3 w-full justify-between items-center py-4'>
         <div className='flex flex-col-reverse md:flex-row tablet:hidden gap-6'>
           {linksSocialMedia.map((media) => {

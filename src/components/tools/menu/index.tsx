@@ -78,13 +78,6 @@ export function Menu() {
     },
     {
       id: 6,
-      title: 'Quero saber mais',
-      href: '/pages/registro/prod-typeform-v3',
-      type: 'compact',
-      submenu: [],
-    },
-    {
-      id: 7,
       title: 'Login',
       href: '/pages/user/login',
       type: 'compact',
