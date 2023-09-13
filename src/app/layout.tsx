@@ -8,6 +8,7 @@ import 'tailwindcss/tailwind.css'
 // components
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+import { MoreButton } from '@/components/tools/moreButton'
 
 // font config
 const montserrat = Montserrat({
@@ -36,6 +37,9 @@ export default function RootLayout({
         </div>
         {children}
         <Footer />
+        <div className='flex desktop:hidden fixed z-30 bottom-1 md:bottom-5 w-full justify-center items-center'>
+        <MoreButton />
+      </div>
       </body>
     </html>
   )
