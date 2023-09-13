@@ -15,19 +15,19 @@ import { MenuModal } from './menuModal'
 import { ContextGlobalElements } from '@/context/global'
 
 export function Menu() {
-  const { controlMenuOpen, menuOpen } = useContext(ContextGlobalElements)
-  const wrapperRef = useRef(null)
   const pathname = usePathname()
+  const { controlMenuOpen, menuOpen } = useContext(ContextGlobalElements)
   const [selected, setSelected] = useState(1)
   const [selectCurrent, setSelectCurrent] = useState(1)
   const [hoverItem, setHoverItem] = useState(0)
   const [effectSelectOption, setEffectSelectOption] = useState(0)
+  const menuRef = useRef(null)
 
   function useOutsideAlerter(ref: any) {
     useEffect(() => {
       function handleClickOutside(event: any) {
         if (ref.current && !ref.current.contains(event.target)) {
-          if (menuOpen) controlMenuOpen(false)
+          controlMenuOpen(false)
         }
       }
 
@@ -38,7 +38,7 @@ export function Menu() {
     }, [ref])
   }
 
-  useOutsideAlerter(wrapperRef)
+  useOutsideAlerter(menuRef)
 
   const menuItems = [
     {
@@ -135,7 +135,7 @@ export function Menu() {
   }
 
   return (
-    <div ref={wrapperRef} className='flex font-montserrat font-semibold'>
+    <div ref={menuRef} className='flex font-montserrat font-semibold'>
       <div className='hidden desktop:flex gap-8'>
         {menuItems.map((item) => {
           if (item.type === 'select') {

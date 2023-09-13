@@ -16,7 +16,7 @@ export function AnimatedImage() {
     setFirstEffect(false)
     setTimeout(() => {
       setCardEffect(false)
-    }, 300)
+    }, 1000)
   }, [])
 
   return (
