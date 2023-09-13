@@ -33,7 +33,7 @@ export function AnimatedImage() {
       <Image
         src={card}
         alt='card'
-        className={`flex  z-10 -ml-[90%] tablet:-ml-[780px] monitor:-ml-[1240px] mb-[22%]  tablet:mb-[190px] monitor:mb-[280px] w-[27%] tablet:w-[220px] monitor:w-[380px] rounded-none sm:rounded-sm md:rounded-md tablet:rounded-lg lg:rounded-xl monitor:rounded-2xl shadow-md  shadow-inHover  ${
+        className={`flex  z-10 -ml-[90%] tablet:-ml-[780px] monitor:-ml-[1240px] mb-[22%]  tablet:mb-[190px] monitor:mb-[280px] w-[27%] tablet:w-[220px] monitor:w-[380px] rounded-none sm:rounded-sm md:rounded-md tablet:rounded-lg lg:rounded-xl monitor:rounded-2xl shadow-xl  ${
           firstEffect ? 'translate-y-[100%] opacity-0 ' : ' opacity-100'
         } ${
           cardEffect
