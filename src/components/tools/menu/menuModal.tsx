@@ -47,8 +47,8 @@ export function MenuModal({
   return (
     <div
       className={` ${
-        menuOpen ? 'flex  w-[16rem]' : 'hidden'
-      }  flex-col z-30 absolute bg-white p-4 gap-1 right-8 mt-16 border border-inHover border-opacity-20 shadow-lg rounded-lg`}
+        menuOpen ? 'flex  min-w-[10rem]' : 'hidden'
+      }  flex-col z-30 fixed bg-white bg-pointer-events-auto p-4 gap-1 right-[4%] sm:right-[5%] md:right-[6%] tablet:right-[7%] lg:right-[8%] desktop:right-[9%] monitor:right-[16%]  mt-14 border border-inHover border-opacity-20 shadow-lg rounded-lg`}
     >
       {menuItems.map((item) => {
         if (item.type === 'select') {
@@ -86,7 +86,7 @@ export function MenuModal({
                   selectCurrent == item.id && menuOpen
                     ? 'w-full h-auto'
                     : 'hidden w-0 h-0 pointer-events-none'
-                } flex-col gap-2 py-2 px-8 mt-2 -ml-2 transition-all duration-500 `}
+                } flex-col gap-6 py-4 px-8 mt-2 -ml-2 transition-all duration-500 `}
               >
                 {item.submenu.map((menu) => {
                   return (
