@@ -1,5 +1,5 @@
 // vendors
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // components
 import { InputEmail } from '@/components/tools/inputEmail'
@@ -17,6 +17,38 @@ export function CardHome_1() {
 
     if (countWordFirstCard == textChange.length - 2) setCountWordFirstCard(0)
   }, 3000)
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const firstHeight = firstItem.current?.offsetTop
+  //       ? firstItem.current?.offsetTop + 100 <
+  //         window.scrollY + window.innerHeight
+  //       : false
+  //     const secondHeight = secondItem.current?.offsetTop
+  //       ? secondItem.current?.offsetTop + 100 <
+  //         window.scrollY + window.innerHeight
+  //       : false
+  //     const thirdHeight = thirdItem.current?.offsetTop
+  //       ? thirdItem.current?.offsetTop + 100 <
+  //         window.scrollY + window.innerHeight
+  //       : false
+
+  //     setIsVisibleFirstItem((before) => (before == false ? firstHeight : true))
+
+  //     setIsVisibleSecondItem((before) =>
+  //       before == false ? secondHeight : true,
+  //     )
+
+  //     setIsVisibleThirdItem((before) => (before == false ? thirdHeight : true))
+  //   }
+
+  //   handleScroll()
+
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll)
+  //   }
+  // }, [])
 
   return (
     <main className='flex flex-col w-full'>

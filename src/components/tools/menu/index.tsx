@@ -1,7 +1,7 @@
 'use client'
 
 // vendors
-import { useEffect, useState, useContext, useRef } from 'react'
+import { useEffect, useState, useContext, useRef, useMemo } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
@@ -13,6 +13,72 @@ import { MenuModal } from './menuModal'
 
 // contexts
 import { ContextGlobalElements } from '@/context/global'
+
+const menuItems = [
+  {
+    id: 1,
+    title: 'Home',
+    href: '/',
+    type: 'always',
+    submenu: [],
+  },
+  {
+    id: 2,
+    title: 'Produto',
+    href: '',
+    type: 'select',
+    submenu: [
+      {
+        id: 1,
+        title: 'Despesas',
+        href: '/pages/produto/cartoes',
+      },
+      {
+        id: 2,
+        title: 'Viagens',
+        href: '/pages/produto/viagens',
+      },
+      {
+        id: 3,
+        title: 'Frotas',
+        href: '/pages/produto/frotas',
+      },
+      {
+        id: 4,
+        title: 'Anúncios',
+        href: '/pages/produto/anuncios',
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: 'Blog',
+    href: '/pages/hub',
+    type: 'always',
+    submenu: [],
+  },
+  {
+    id: 4,
+    title: 'Ferramentas',
+    href: '/pages/ferramentas',
+    type: 'always',
+    submenu: [],
+  },
+  {
+    id: 5,
+    title: 'Clientes',
+    href: '/pages/clientes',
+    type: 'always',
+    submenu: [],
+  },
+  {
+    id: 6,
+    title: 'Login',
+    href: '/pages/user/login',
+    type: 'compact',
+    submenu: [],
+  },
+]
 
 export function Menu() {
   const pathname = usePathname()
@@ -40,72 +106,6 @@ export function Menu() {
 
   useOutsideAlerter(menuRef)
 
-  const menuItems = [
-    {
-      id: 1,
-      title: 'Home',
-      href: '/',
-      type: 'always',
-      submenu: [],
-    },
-    {
-      id: 2,
-      title: 'Produto',
-      href: '',
-      type: 'select',
-      submenu: [
-        {
-          id: 1,
-          title: 'Despesas',
-          href: '/pages/produto/cartoes',
-        },
-        {
-          id: 2,
-          title: 'Viagens',
-          href: '/pages/produto/viagens',
-        },
-        {
-          id: 3,
-          title: 'Frotas',
-          href: '/pages/produto/frotas',
-        },
-        {
-          id: 4,
-          title: 'Anúncios',
-          href: '/pages/produto/anuncios',
-        },
-      ],
-    },
-    {
-      id: 3,
-      title: 'Blog',
-      href: '/pages/hub',
-      type: 'always',
-      submenu: [],
-    },
-    {
-      id: 4,
-      title: 'Ferramentas',
-      href: '/pages/ferramentas',
-      type: 'always',
-      submenu: [],
-    },
-    {
-      id: 5,
-      title: 'Clientes',
-      href: '/pages/clientes',
-      type: 'always',
-      submenu: [],
-    },
-    {
-      id: 6,
-      title: 'Login',
-      href: '/pages/user/login',
-      type: 'compact',
-      submenu: [],
-    },
-  ]
-
   function handleClick(id: number) {
     setSelectCurrent((before) => (before == id ? 0 : id))
     setSelected((before) => (before == id ? 0 : id))
@@ -123,7 +123,7 @@ export function Menu() {
 
     const item = currentPathId.filter((e) => e != undefined)[0] || 0
     setSelected(item)
-  }, [menuItems, pathname])
+  }, [pathname])
 
   function handleEffectInSelectOption(id: number) {
     setEffectSelectOption((before) => (before == id ? 0 : id))
