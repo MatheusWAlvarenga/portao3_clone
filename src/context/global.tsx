@@ -6,8 +6,7 @@ import { ReactNode, createContext, useState } from 'react'
 // types
 type ContextProps = {
   menuOpen: boolean
-  controlMenuOpen: (item?: boolean) => void
-  controlClickOutMenu: () => void
+  controlMenuOpen: (item?: string) => void
 }
 
 type Props = {
@@ -20,14 +19,10 @@ export const ContextGlobalElements = createContext({} as ContextProps)
 export function ContextGlobal({ children }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  function controlMenuOpen(item?: boolean) {
-    if (item) return setMenuOpen(item)
+  function controlMenuOpen(item?: string) {
+    if (item == 'close') setMenuOpen(false)
 
-    setMenuOpen((before) => !before)
-  }
-
-  function controlClickOutMenu() {
-    if (menuOpen) setMenuOpen(false)
+    if (item == undefined) setMenuOpen((before) => !before)
   }
 
   return (
@@ -35,7 +30,6 @@ export function ContextGlobal({ children }: Props) {
       value={{
         menuOpen,
         controlMenuOpen,
-        controlClickOutMenu,
       }}
     >
       {children}

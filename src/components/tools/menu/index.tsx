@@ -27,7 +27,7 @@ export function Menu() {
     useEffect(() => {
       function handleClickOutside(event: any) {
         if (ref.current && !ref.current.contains(event.target)) {
-          controlMenuOpen(false)
+          controlMenuOpen('close')
         }
       }
 
@@ -113,7 +113,7 @@ export function Menu() {
 
   function handleCloseSelect(closeCompactMenu?: boolean) {
     setSelectCurrent(0)
-    if (closeCompactMenu) controlMenuOpen(false)
+    if (closeCompactMenu) controlMenuOpen('close')
   }
 
   useEffect(() => {
