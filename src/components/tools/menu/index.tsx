@@ -88,12 +88,14 @@ export function Menu() {
   const [hoverItem, setHoverItem] = useState(0)
   const [effectSelectOption, setEffectSelectOption] = useState(0)
   const menuRef = useRef(null)
+  const selectMenuRef = useRef(null)
 
-  function useOutsideAlerter(ref: any) {
+  function useOutsideMenu(ref: any) {
     useEffect(() => {
       function handleClickOutside(event: any) {
         if (ref.current && !ref.current.contains(event.target)) {
           controlMenuOpen('close')
+          setSelectCurrent(0)
         }
       }
 
@@ -104,7 +106,23 @@ export function Menu() {
     }, [ref])
   }
 
-  useOutsideAlerter(menuRef)
+  function useOutsideSelect(ref: any) {
+    useEffect(() => {
+      function handleClickOutside(event: any) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setSelectCurrent(0)
+        }
+      }
+
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }, [ref])
+  }
+
+  useOutsideMenu(menuRef)
+  useOutsideSelect(selectMenuRef)
 
   function handleClick(id: number) {
     setSelectCurrent((before) => (before == id ? 0 : id))
@@ -113,7 +131,9 @@ export function Menu() {
 
   function handleCloseSelect(closeCompactMenu?: boolean) {
     setSelectCurrent(0)
-    if (closeCompactMenu) controlMenuOpen('close')
+    if (closeCompactMenu) {
+      controlMenuOpen('close')
+    }
   }
 
   useEffect(() => {
@@ -131,6 +151,7 @@ export function Menu() {
   function handleMenuOpen() {
     if (selected != 0) setSelected(0)
 
+    setSelectCurrent(0)
     controlMenuOpen()
   }
 
@@ -144,6 +165,7 @@ export function Menu() {
                 key={item.id}
                 onMouseEnter={() => setHoverItem(item.id)}
                 onMouseLeave={() => setHoverItem(0)}
+                ref={selectMenuRef}
               >
                 <button
                   onClick={() => handleClick(item.id)}
