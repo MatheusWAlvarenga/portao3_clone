@@ -14,8 +14,7 @@ export function MoreButton({ floating = false }: MoreButtonProps) {
   const [showMoreButton, setShowMoreButton] = useState(true)
 
   useEffect(() => {
-    if (pathname.endsWith('/prod-typeform-v3') || pathname.endsWith('/login'))
-      return setShowMoreButton(false)
+    if (pathname.endsWith('/prod-typeform-v3')) return setShowMoreButton(false)
     setShowMoreButton(true)
   }, [pathname])
 
