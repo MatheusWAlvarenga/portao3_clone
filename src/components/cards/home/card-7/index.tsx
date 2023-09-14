@@ -1,5 +1,11 @@
+// vendors
+import { useContext, useEffect, useRef, useState } from 'react'
+
 // components
 import { Flag } from './flag'
+
+// contexts
+import { ContextGlobalElements } from '@/context/global'
 
 // assets
 import fifthCard1 from '@/assets/fifthCardHome1.png'
@@ -8,6 +14,29 @@ import fifthCard3 from '@/assets/fifthCardHome3.png'
 import fifthCard4 from '@/assets/fifthCardHome4.png'
 
 export function CardHome_7() {
+  const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)
+
+  const [viewFlag, setViewFlag] = useState(false)
+
+  const refFlag = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const viewFlag = refFlag.current?.offsetTop
+        ? refFlag.current?.offsetTop + 100 < window.scrollY + window.innerHeight
+        : false
+
+      setViewFlag((before) => (before == false ? viewFlag : true))
+
+      // reset scrollY
+      resetActualScrollView(
+        refFlag.current?.offsetTop ? refFlag.current?.offsetTop : 0,
+      )
+    }
+
+    handleScroll()
+  }, [scrollY])
+
   const itemsList = [
     {
       id: 1,
@@ -54,7 +83,12 @@ export function CardHome_7() {
         </p>
       </div>
       <div className='w-full flex justify-center items-center mt-10 md:mt-20 '>
-        <div className='w-[80%] sm:w-[75%] md:w-[70%] tablet:w-[60%] lg:w-[70%] desktop:[65%] monitor:w-[55%] flex flex-col lg:flex-row justify-center lg:justify-between items-center'>
+        <div
+          ref={refFlag}
+          className={`${
+            viewFlag ? '' : 'opacity-0'
+          } transition-opacity duration-1000 delay-500 w-[80%] sm:w-[75%] md:w-[70%] tablet:w-[60%] lg:w-[70%] desktop:[65%] monitor:w-[55%] flex flex-col lg:flex-row justify-center lg:justify-between items-center`}
+        >
           {itemsList.map((card) => {
             return <Flag key={card.id} props={card} />
           })}

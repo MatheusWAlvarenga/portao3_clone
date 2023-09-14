@@ -1,6 +1,9 @@
 // vendors
-import { useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+
+// contexts
+import { ContextGlobalElements } from '@/context/global'
 
 // assets
 import image from '@/assets/lastCardHome.png'
@@ -10,9 +13,36 @@ import { InputEmail } from '@/components/tools/inputEmail'
 
 export function CardHome_10() {
   const [hoverElement, setHoverElement] = useState(false)
+  const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)
+
+  const [viewDiv, setViewDiv] = useState(false)
+
+  const refDiv = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const viewDiv = refDiv.current?.offsetTop
+        ? refDiv.current?.offsetTop + 100 < window.scrollY + window.innerHeight
+        : false
+
+      setViewDiv((before) => (before == false ? viewDiv : true))
+
+      // reset scrollY
+      resetActualScrollView(
+        refDiv.current?.offsetTop ? refDiv.current?.offsetTop : 0,
+      )
+    }
+
+    handleScroll()
+  }, [scrollY])
 
   return (
-    <div className='flex w-full justify-center items-center py-20 px-[2%] sm:px-[4%] md:px-[8%] tablet:px-[10%] lg:px-[12%] desktop:px-[15%] monitor:px-[22%]  font-montserrat text-white'>
+    <div
+      ref={refDiv}
+      className={`${
+        viewDiv ? '' : 'opacity-0'
+      } transition-opacity duration-1000 delay-500 flex w-full justify-center items-center py-20 px-[2%] sm:px-[4%] md:px-[8%] tablet:px-[10%] lg:px-[12%] desktop:px-[15%] monitor:px-[22%]  font-montserrat text-white`}
+    >
       <div
         onMouseEnter={() => setHoverElement(true)}
         onMouseLeave={() => setHoverElement(false)}

@@ -24,7 +24,7 @@ export function Flag({ props }: FlagProps) {
     <div
       onMouseEnter={() => hoverControl(true)}
       onMouseLeave={() => hoverControl(false)}
-      className={`flex flex-col lg:flex-row justify-center text-textCard gap-2 px-8 py-9 rounded-lg drop-shadow-xl hover:drop-shadow-2xl hover:translate-x-[.15rem] hover:translate-y-[.15rem] font-montserrat w-[85%] sm:w-[80%] md:w-[70%] tablet:w-[60%] lg:w-[80%] desktop:w-[55%] monitor:w-[50%] desktop:min-h-[20rem] border border-line border-opacity-40 bg-white transition duration-200 `}
+      className={`flex flex-col lg:flex-row justify-center text-textCard gap-2 px-8 py-9 rounded-lg shadow-xl hover:shadow-2xl hover:translate-x-[.15rem] hover:translate-y-[.15rem] font-montserrat w-[85%] sm:w-[80%] md:w-[70%] tablet:w-[60%] lg:w-[80%] desktop:w-[55%] monitor:w-[50%] desktop:min-h-[20rem] border border-line border-opacity-40 bg-white transition duration-200 `}
     >
       <div className='flex flex-col w-full lg:w-1/2 justify-between p-4 items-start gap-4'>
         <div className='flex text-second text-xl md:text-2xl tablet:text-3xl lg:text-4xl font-medium w-full lg:w-3/4'>
