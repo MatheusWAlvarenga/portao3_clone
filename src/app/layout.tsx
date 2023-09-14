@@ -10,7 +10,7 @@ import 'tailwindcss/tailwind.css'
 // components
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { MoreButton } from '@/components/tools/moreButton'
+import { MoreButton } from '@/components/tools/button/moreButton'
 
 // fonts config
 const montserrat = Montserrat({
