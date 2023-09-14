@@ -7,13 +7,13 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 // assets
-import kiwify from '@/assets/kiwify.png'
-import tractian from '@/assets/tractian.png'
-import play9 from '@/assets/play9.png'
-import sulamerica from '@/assets/sulamerica.png'
-import noh from '@/assets/noh.png'
-import sami from '@/assets/sami.png'
-import bitso from '@/assets/bitso.png'
+import kiwify from '../assets/kiwify.png'
+import tractian from '../assets/tractian.png'
+import play9 from '../assets/play9.png'
+import sulamerica from '../assets/sulamerica.png'
+import noh from '../assets/noh.png'
+import sami from '../assets/sami.png'
+import bitso from '../assets/bitso.png'
 
 // type
 type ImageType = {

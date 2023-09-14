@@ -6,12 +6,12 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import { ContextGlobalElements } from '@/context/global'
 
 // assets
-import flexport from '@/assets/flexport.png'
-import betterTomorrow from '@/assets/betterTomorrow.png'
-import combinator from '@/assets/combinator.png'
-import endeavor from '@/assets/endeavor.png'
-import fin from '@/assets/fin.png'
-import pareto from '@/assets/pareto.png'
+import flexport from './assets/flexport.png'
+import betterTomorrow from './assets/betterTomorrow.png'
+import combinator from './assets/combinator.png'
+import endeavor from './assets/endeavor.png'
+import fin from './assets/fin.png'
+import pareto from './assets/pareto.png'
 
 export function CardHome_3() {
   const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)

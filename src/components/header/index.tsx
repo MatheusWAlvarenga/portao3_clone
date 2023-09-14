@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 // components
 import { Menu } from '@/components/tools/menu'
-import { MoreButton } from '@/components/tools/moreButton'
+import { MoreButton } from '@/components/tools/button/moreButton'
 
 // assets
 import logo from '@/assets/portao3-logo.svg'

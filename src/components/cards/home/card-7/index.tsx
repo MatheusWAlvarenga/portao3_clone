@@ -8,10 +8,10 @@ import { Flag } from './flag'
 import { ContextGlobalElements } from '@/context/global'
 
 // assets
-import fifthCard1 from '@/assets/fifthCardHome1.png'
-import fifthCard2 from '@/assets/fifthCardHome2.png'
-import fifthCard3 from '@/assets/fifthCardHome3.png'
-import fifthCard4 from '@/assets/fifthCardHome4.png'
+import Card1 from './assets/CardHome1.png'
+import Card2 from './assets/CardHome2.png'
+import Card3 from './assets/CardHome3.png'
+import Card4 from './assets/CardHome4.png'
 
 export function CardHome_7() {
   const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)
@@ -42,7 +42,7 @@ export function CardHome_7() {
       id: 1,
       title: 'Viagens',
       text: 'Compre passagens e hotéis com desconto',
-      image: fifthCard1,
+      image: Card1,
       altImage: '',
       ref: '/',
     },
@@ -50,7 +50,7 @@ export function CardHome_7() {
       id: 2,
       title: 'Frotas',
       text: 'Otimize os gastos e bloqueie fraudes com IA',
-      image: fifthCard2,
+      image: Card2,
       altImage: '',
       ref: '/',
     },
@@ -58,7 +58,7 @@ export function CardHome_7() {
       id: 3,
       title: 'Anúncios',
       text: 'Suas campanhas sempre no ar, sem preocupações',
-      image: fifthCard3,
+      image: Card3,
       altImage: '',
       ref: '/',
     },
@@ -66,7 +66,7 @@ export function CardHome_7() {
       id: 4,
       title: 'Eventos',
       text: 'Serviço de concierge para agendar eventos',
-      image: fifthCard4,
+      image: Card4,
       altImage: '',
       ref: '/',
     },

@@ -8,9 +8,9 @@ import { Flag } from './flag'
 import { ContextGlobalElements } from '@/context/global'
 
 // assets
-import sulAmerica from '@/assets/sulAmerica-gray.png'
-import credpago from '@/assets/credpago-gray.png'
-import noh from '@/assets/noh-gray.png'
+import sulAmerica from './assets/sulAmerica-gray.png'
+import credpago from './assets/credpago-gray.png'
+import noh from './assets/noh-gray.png'
 
 export function CardHome_4() {
   const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)

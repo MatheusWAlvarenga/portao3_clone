@@ -11,10 +11,10 @@ import 'slick-carousel/slick/slick-theme.css'
 import { BsArrowRight } from 'react-icons/bs'
 
 // assets
-import tech from '@/assets/techCrunch.png'
-import exame from '@/assets/exame.png'
-import estadao from '@/assets/estadao.png'
-import forbes from '@/assets/forbes.png'
+import tech from '../assets/techCrunch.png'
+import exame from '../assets/exame.png'
+import estadao from '../assets/estadao.png'
+import forbes from '../assets/forbes.png'
 
 // components
 import { SampleNextArrow, SamplePrevArrow } from './sampleArrow'

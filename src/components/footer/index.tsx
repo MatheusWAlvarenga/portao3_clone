@@ -7,11 +7,11 @@ import { InputEmail } from '@/components/tools/inputEmail'
 
 // assets
 import logo from '@/assets/portao3-logo.svg'
-import instagramLogo from '@/assets/instagram-logo.svg'
-import linkedInLogo from '@/assets/linkedIn-logo.svg'
-import youTubeLogo from '@/assets/youTube-logo.svg'
-import appStoreImage from '@/assets/appStore.png'
-import googlePlayImage from '@/assets/googlePlay.png'
+import instagramLogo from './assets/instagram-logo.svg'
+import linkedInLogo from './assets/linkedIn-logo.svg'
+import youTubeLogo from './assets/youTube-logo.svg'
+import appStoreImage from './assets/appStore.png'
+import googlePlayImage from './assets/googlePlay.png'
 
 export function Footer() {
   const linksPage = [
@@ -57,7 +57,7 @@ export function Footer() {
   return (
     <main className='flex flex-col gap-4 desktop:gap-2 px-[2%] sm:px-[4%] md:px-[8%] tablet:px-[10%] lg:px-[12%] desktop:px-[15%] monitor:px-[22%] py-[1rem] justify-center items-center w-full min-h-[28rem] bg-footer-background  divide-y-2 divide-footer-line pb-14 md:pb-[5rem] desktop:pb-0'>
       <div className='flex flex-col tablet:flex-row gap-3 w-full justify-between items-center py-4'>
-        <div className='flex flex-col-reverse md:flex-row tablet:hidden gap-6'>
+        <div className='flex flex-col-reverse md:flex-row tablet:hidden gap-6 mt-6'>
           {linksSocialMedia.map((media) => {
             return (
               <Link key={media.id} href={media.ref} target='_blank'>
@@ -70,7 +70,7 @@ export function Footer() {
             )
           })}
         </div>
-        <div className='flex flex-col justify-center items-center md:flex-row gap-5 tracking-wide'>
+        <div className='flex flex-col justify-center items-center md:flex-row gap-5 tracking-wide mt-6'>
           {linksPage.map((link) => {
             return (
               <Link
@@ -83,12 +83,12 @@ export function Footer() {
             )
           })}
         </div>
-        <div className='hidden tablet:flex gap-6 '>
+        <div className='hidden tablet:flex gap-6 justify-center items-center'>
           {linksSocialMedia.map((media) => {
             return (
               <Link key={media.id} href={media.ref} target='_blank'>
                 <Image
-                  className='flex w-6 h-auto'
+                  className='flex w-6 h-auto lg:mt-0 mt-6'
                   src={media.image}
                   alt={media.alt}
                 />

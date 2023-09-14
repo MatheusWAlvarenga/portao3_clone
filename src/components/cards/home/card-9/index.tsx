@@ -8,9 +8,9 @@ import { Flag } from './flag'
 import { ContextGlobalElements } from '@/context/global'
 
 // assets
-import ninthCard1 from '@/assets/ninthCardHome1.png'
-import ninthCard2 from '@/assets/ninthCardHome2.png'
-import ninthCard3 from '@/assets/ninthCardHome3.png'
+import Card1 from './assets/CardHome1.png'
+import Card2 from './assets/CardHome2.png'
+import Card3 from './assets/CardHome3.png'
 
 export function CardHome_9() {
   const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)
@@ -41,7 +41,7 @@ export function CardHome_9() {
       id: 1,
       title: 'Blog',
       text: 'Conteúdos e newsletter para acelerar seu financeiro',
-      image: ninthCard1,
+      image: Card1,
       altImage: '',
       ref: '/',
     },
@@ -49,7 +49,7 @@ export function CardHome_9() {
       id: 2,
       title: ' E-books',
       text: 'Materiais gratuitos pra você se aprofundar ainda mais',
-      image: ninthCard2,
+      image: Card2,
       altImage: '',
       ref: '/',
     },
@@ -57,7 +57,7 @@ export function CardHome_9() {
       id: 3,
       title: 'Ferramentas',
       text: 'Calculadoras e modelos para apoiar suas finanças',
-      image: ninthCard3,
+      image: Card3,
       altImage: '',
       ref: '/',
     },

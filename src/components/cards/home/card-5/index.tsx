@@ -8,9 +8,9 @@ import { Flag } from './flag'
 import { ContextGlobalElements } from '@/context/global'
 
 // assets
-import thirdCard1 from '@/assets/thirdCardHome1.png'
-import thirdCard2 from '@/assets/thirdCardHome2.png'
-import thirdCard3 from '@/assets/thirdCardHome3.png'
+import Card1 from './assets/CardHome1.png'
+import Card2 from './assets/CardHome2.png'
+import Card3 from './assets/CardHome3.png'
 
 export function CardHome_5() {
   const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)
@@ -44,7 +44,7 @@ export function CardHome_5() {
         'Visão de gastos com categorização inteligente para tomada de decisão.',
       text2:
         'Acompanhe de perto a saúde financeira da empresa e evite surpresas no fim do trimestre.',
-      image: thirdCard1,
+      image: Card1,
       altImage: '',
     },
     {
@@ -52,7 +52,7 @@ export function CardHome_5() {
       title: 'Facilite a vida dos gerentes',
       text1: 'Crie políticas e controle despesas e orçamentos com facilidade.',
       text2: 'Ganhe tempo com aprovações e regras automatizadas.',
-      image: thirdCard2,
+      image: Card2,
       altImage: '',
     },
     {
@@ -61,7 +61,7 @@ export function CardHome_5() {
       text1: 'Tenha as despesas registradas automaticamente. ',
       text2:
         'Nosso sistema cuida da parte chata pra você focar no que faz de melhor.',
-      image: thirdCard3,
+      image: Card3,
       altImage: '',
     },
   ]

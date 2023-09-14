@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 // assets
-import card from '@/assets/card.png'
-import phone from '@/assets/phone.png'
-import image1 from '@/assets/home-Image1.png'
+import card from '../assets/card.png'
+import phone from '../assets/phone.png'
+import page from '../assets/page.png'
 
 export function AnimatedImage() {
   const [firstEffect, setFirstEffect] = useState(true)
@@ -22,7 +22,7 @@ export function AnimatedImage() {
   return (
     <div className='flex w-full px-4 sm:px-0 justify-center items-end '>
       <Image
-        src={image1}
+        src={page}
         alt=''
         className={`flex w-[85%]  tablet:w-[740px]  monitor:w-[1140px] ${
           firstEffect

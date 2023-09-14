@@ -1,20 +1,20 @@
 // components
 import { Flags } from './flag'
-
-// context
 import { useContext, useEffect, useRef, useState } from 'react'
 
-// assets
-import flagAccount1 from '@/assets/flag-account-1.png'
-import flagAccount2 from '@/assets/flag-account-2.png'
-import flagAccount3 from '@/assets/flag-account-3.png'
-import flagAccount4 from '@/assets/flag-account-4.png'
-import flagCard from '@/assets/flag-card.png'
-import flagCosts from '@/assets/flag-costs.png'
-import flagInsight1 from '@/assets/flag-insight-1.png'
-import flagInsight2 from '@/assets/flag-insight-2.png'
-import flagInsight3 from '@/assets/flag-insight-3.png'
+// context
 import { ContextGlobalElements } from '@/context/global'
+
+// assets
+import Account1 from './assets/account-1.png'
+import Account2 from './assets/account-2.png'
+import Account3 from './assets/account-3.png'
+import Account4 from './assets/account-4.png'
+import FlagCard from './assets/flagCard.png'
+import Costs from './assets/costs.png'
+import Insight1 from './assets/insight-1.png'
+import Insight2 from './assets/insight-2.png'
+import Insight3 from './assets/insight-3.png'
 
 export function CardHome_2() {
   const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)
@@ -46,7 +46,7 @@ export function CardHome_2() {
       title: 'Cartões',
       description:
         'Em poucos cliques, você cria e solicita quantos cartões precisar, físicos ou virtuais.',
-      image: [flagCard],
+      image: [FlagCard],
       imageAlt: '',
     },
     {
@@ -54,7 +54,7 @@ export function CardHome_2() {
       title: 'Despesas',
       description:
         'Regras para saldo dos cartões e bloqueie fraudes ou pagamentos suspeitos.',
-      image: [flagCosts],
+      image: [Costs],
       imageAlt: '',
     },
     {
@@ -62,7 +62,7 @@ export function CardHome_2() {
       title: 'Contas',
       description:
         'Controle seus fornecedores em um só lugar e descubra onde otimizar seus custos.',
-      image: [flagAccount1, flagAccount2, flagAccount3, flagAccount4],
+      image: [Account1, Account2, Account3, Account4],
       imageAlt: '',
       type: 'grid',
     },
@@ -71,7 +71,7 @@ export function CardHome_2() {
       title: 'Insights',
       description:
         'Acesse recomendações personalizadas e análises de tendência de gastos.',
-      image: [flagInsight1, flagInsight2, flagInsight3],
+      image: [Insight1, Insight2, Insight3],
       imageAlt: '',
     },
   ]

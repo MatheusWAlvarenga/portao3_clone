@@ -8,9 +8,9 @@ import { Flag } from './flag'
 import { ContextGlobalElements } from '@/context/global'
 
 // assets
-import fourthCard1 from '@/assets/fourthCardHome1.png'
-import fourthCard2 from '@/assets/fourthCardHome2.png'
-import fourthCard3 from '@/assets/fourthCardHome3.png'
+import Card1 from './assets/CardHome1.png'
+import Card2 from './assets/CardHome2.png'
+import Card3 from './assets/CardHome3.png'
 
 export function CardHome_6() {
   const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)
@@ -41,21 +41,21 @@ export function CardHome_6() {
       id: 1,
       title: 'Controle',
       text: 'Defina políticas de aprovação e crie quantos cartões precisar',
-      image: fourthCard1,
+      image: Card1,
       altImage: '',
     },
     {
       id: 2,
       title: 'Integre',
       text: 'Integre com seu ERP e serviços de contabilidade com facilidade',
-      image: fourthCard2,
+      image: Card2,
       altImage: '',
     },
     {
       id: 3,
       title: 'Pague',
       text: 'Use os cartões, confira os gastos, faça a conciliação em segundos',
-      image: fourthCard3,
+      image: Card3,
       altImage: '',
     },
   ]

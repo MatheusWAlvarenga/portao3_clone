@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { ContextGlobalElements } from '@/context/global'
 
 // assets
-import image from '@/assets/lastCardHome.png'
+import image from './assets/CardHome.png'
 
 // components
 import { InputEmail } from '@/components/tools/inputEmail'
