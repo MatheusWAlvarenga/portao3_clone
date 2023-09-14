@@ -1,7 +1,10 @@
 'use client'
 // vendors
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+
+// contexts
+import { ContextGlobalElements } from '@/context/global'
 
 // assets
 import card from '../assets/card.png'
@@ -12,11 +15,35 @@ export function AnimatedImage() {
   const [firstEffect, setFirstEffect] = useState(true)
   const [cardEffect, setCardEffect] = useState(true)
 
+  const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)
+
+  const refAnimatedImage = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const viewAnimatedImage = refAnimatedImage.current?.offsetTop
+        ? refAnimatedImage.current?.offsetTop +
+            refAnimatedImage.current?.clientHeight / 2 <
+          window.scrollY + window.innerHeight
+        : false
+
+      setTimeout(() => {
+        setCardEffect((before) => (before == true ? viewAnimatedImage : false))
+      }, 2000)
+
+      // reset scrollY
+      resetActualScrollView(
+        refAnimatedImage.current?.offsetTop
+          ? refAnimatedImage.current?.offsetTop
+          : 0,
+      )
+    }
+
+    handleScroll()
+  }, [scrollY])
+
   useEffect(() => {
     setFirstEffect(false)
-    setTimeout(() => {
-      setCardEffect(false)
-    }, 1000)
   }, [])
 
   return (
@@ -25,22 +52,22 @@ export function AnimatedImage() {
         src={page}
         alt=''
         className={`flex w-[85%]  tablet:w-[740px]  monitor:w-[1140px] ${
-          firstEffect
-            ? 'translate-y-[30rem] opacity-0'
-            : 'translate-y-0 opacity-100 '
+          firstEffect ? ' opacity-0' : ' opacity-100 '
         } transition-translate  duration-500 `}
       />
       <Image
         src={card}
         alt='card'
-        className={`flex  z-10 -ml-[90%] tablet:-ml-[780px] monitor:-ml-[1240px] mb-[22%]  tablet:mb-[190px] monitor:mb-[280px] w-[27%] tablet:w-[220px] monitor:w-[380px] rounded-md desktop:rounded-xl shadow-xl  ${
-          firstEffect ? 'translate-y-[100%] opacity-0 ' : ' opacity-100'
+        className={` flex  z-10 -ml-[90%] tablet:-ml-[780px] monitor:-ml-[1240px] mb-[22%]  tablet:mb-[190px] monitor:mb-[280px] w-[27%] tablet:w-[220px] monitor:w-[380px] rounded-md desktop:rounded-xl shadow-xl  ${
+          firstEffect ? 'opacity-0 ' : ' opacity-100'
         } ${
           cardEffect
             ? 'translate-y-[15%] translate-x-[17%] tablet:translate-y-[10%] tablet:translate-x-[21%]  scale-50 shadow-none'
             : 'duration-300'
         }  transition-all duration-700 delay-1000`}
       />
+      <div ref={refAnimatedImage} className='w-0 h-0' />
+
       <Image
         src={phone}
         alt='card'

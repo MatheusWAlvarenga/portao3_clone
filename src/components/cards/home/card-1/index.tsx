@@ -1,5 +1,5 @@
 // vendors
-import { useState, useContext, useEffect, useRef } from 'react'
+import { useState } from 'react'
 
 // components
 import { InputEmail } from '@/components/tools/inputEmail'
@@ -7,40 +7,12 @@ import Carousel from './carousel'
 import RollInText from '@/components/tools/rollInText'
 import { AnimatedImage } from './animatedImage'
 
-// contexts
-import { ContextGlobalElements } from '@/context/global'
+
 
 export function CardHome_1() {
   const [countWordFirstCard, setCountWordFirstCard] = useState(0)
 
-  const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)
-
-  const [viewAnimatedImage, setViewAnimatedImage] = useState(false)
-
-  const refAnimatedImage = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const viewAnimatedImage = refAnimatedImage.current?.offsetTop
-        ? refAnimatedImage.current?.offsetTop +
-            refAnimatedImage.current?.clientHeight / 2 <
-          window.scrollY + window.innerHeight
-        : false
-
-      setViewAnimatedImage((before) =>
-        before == false ? viewAnimatedImage : true,
-      )
-
-      // reset scrollY
-      resetActualScrollView(
-        refAnimatedImage.current?.offsetTop
-          ? refAnimatedImage.current?.offsetTop
-          : 0,
-      )
-    }
-
-    handleScroll()
-  }, [scrollY])
+  
 
   const textChange = ['centralizada.', 'confiável.', 'descomplicada.']
 
@@ -68,14 +40,9 @@ export function CardHome_1() {
         <div className='flex w-[90%] sm:w-[80%] md:w-[70%] tablet:w-[60%] lg:w-[50%] desktop:w-[40%] monitor:w-[30%] mb-12'>
           <InputEmail />
         </div>
-        <div
-          ref={refAnimatedImage}
-          className={`${
-            viewAnimatedImage ? '' : ' opacity-0'
-          } transition-opacity duration-1000 delay-300`}
-        >
-          {viewAnimatedImage && <AnimatedImage />}
-        </div>
+
+         <AnimatedImage />
+        
       </div>
       <div className='flex flex-col h-[12rem] pb-4 w-full bg-personal'>
         <div className='flex w-full justify-center items-center py-4 sm:py-6'>
