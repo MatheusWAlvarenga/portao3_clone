@@ -41,7 +41,7 @@ export function CardHome_8() {
         ref={refCarousel}
         className={`${
           viewCarousel ? '' : 'opacity-0'
-        } transition-opacity duration-1000 delay-300 flex w-full`}
+        } transition-opacity duration-1000  flex w-full`}
       >
         <Carousel />
       </div>

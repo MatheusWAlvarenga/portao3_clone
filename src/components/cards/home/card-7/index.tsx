@@ -87,7 +87,7 @@ export function CardHome_7() {
           ref={refFlag}
           className={`${
             viewFlag ? '' : 'opacity-0'
-          } transition-opacity duration-1000 delay-300 w-[80%] sm:w-[75%] md:w-[70%] tablet:w-[60%] lg:w-[70%] desktop:[65%] monitor:w-[55%] flex flex-col lg:flex-row justify-center lg:justify-between items-center`}
+          } transition-opacity duration-1000  w-[80%] sm:w-[75%] md:w-[70%] tablet:w-[60%] lg:w-[70%] desktop:[65%] monitor:w-[55%] flex flex-col lg:flex-row justify-center lg:justify-between items-center`}
         >
           {itemsList.map((card) => {
             return <Flag key={card.id} props={card} />
