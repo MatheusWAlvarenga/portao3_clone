@@ -80,7 +80,7 @@ export function CardHome_5() {
         ref={refFlag}
         className={`${
           viewFlag ? '' : 'opacity-0'
-        } transition-opacity duration-1000 delay-500 w-full flex flex-col gap-10 justify-center items-center mt-10 md:mt-20 `}
+        } transition-opacity duration-1000 delay-300 w-full flex flex-col gap-10 justify-center items-center mt-10 md:mt-20 `}
       >
         {itemsList.map((card) => {
           return <Flag key={card.id} props={card} />

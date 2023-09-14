@@ -72,7 +72,7 @@ export function CardHome_1() {
           ref={refAnimatedImage}
           className={`${
             viewAnimatedImage ? '' : ' opacity-0'
-          } transition-opacity duration-1000 delay-500`}
+          } transition-opacity duration-1000 delay-300`}
         >
           {viewAnimatedImage && <AnimatedImage />}
         </div>

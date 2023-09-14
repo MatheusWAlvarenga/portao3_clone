@@ -89,7 +89,7 @@ export function CardHome_4() {
         ref={refFlag}
         className={`${
           viewFlag ? '' : 'opacity-0'
-        } transition-opacity duration-1000 delay-500 flex flex-col justify-center items-center   desktop:justify-start desktop:items-start desktop:grid grid-cols-2 gap-4`}
+        } transition-opacity duration-1000 delay-300 flex flex-col justify-center items-center   desktop:justify-start desktop:items-start desktop:grid grid-cols-2 gap-4`}
       >
         {itemList.map((flag) => {
           return <Flag key={flag.id} props={flag} />

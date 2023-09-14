@@ -41,7 +41,7 @@ export function CardHome_10() {
       ref={refDiv}
       className={`${
         viewDiv ? '' : 'opacity-0'
-      } transition-opacity duration-1000 delay-500 flex w-full justify-center items-center py-20 px-[2%] sm:px-[4%] md:px-[8%] tablet:px-[10%] lg:px-[12%] desktop:px-[15%] monitor:px-[22%]  font-montserrat text-white`}
+      } transition-opacity duration-1000 delay-300 flex w-full justify-center items-center py-20 px-[2%] sm:px-[4%] md:px-[8%] tablet:px-[10%] lg:px-[12%] desktop:px-[15%] monitor:px-[22%]  font-montserrat text-white`}
     >
       <div
         onMouseEnter={() => setHoverElement(true)}
