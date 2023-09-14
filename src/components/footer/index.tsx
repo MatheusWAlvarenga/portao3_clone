@@ -57,29 +57,11 @@ export function Footer() {
   return (
     <main className='flex flex-col gap-4 desktop:gap-2 px-[2%] sm:px-[4%] md:px-[8%] tablet:px-[10%] lg:px-[12%] desktop:px-[15%] monitor:px-[22%] py-[1rem] justify-center items-center w-full min-h-[28rem] bg-footer-background  divide-y-2 divide-footer-line pb-14 md:pb-[5rem] desktop:pb-0'>
       <div className='flex flex-col tablet:flex-row gap-3 w-full justify-between items-center py-4'>
-        <div className='flex justify-center items-center tablet:hidden mt-6'>
-          {linksSocialMedia.map((media) => {
-            return (
-              <Link
-                key={media.id}
-                href={media.ref}
-                target='_blank'
-                className='flex justify-center items-center w-8 h-8 first:ml-0 ml-8'
-              >
-                <Image
-                  className='flex w-6 h-6'
-                  src={media.image}
-                  alt={media.alt}
-                />
-              </Link>
-            )
-          })}
-        </div>
-        <div className='flex flex-col justify-center items-center md:flex-row gap-5 tracking-wide mt-6'>
+        <div className='flex  justify-center items-center gap-5 tracking-wide mt-6'>
           {linksPage.map((link) => {
             return (
               <Link
-                className='text-[1.125rem] font-light text-footer-text hover:text-footer-textHover'
+                className='text-[1rem] font-light text-footer-text hover:text-footer-textHover'
                 key={link.id}
                 href={link.ref}
               >
@@ -88,17 +70,17 @@ export function Footer() {
             )
           })}
         </div>
-        <div className='hidden tablet:flex gap-6 justify-center items-center'>
+        <div className='flex gap-6 justify-center items-center'>
           {linksSocialMedia.map((media) => {
             return (
               <Link
                 key={media.id}
                 href={media.ref}
                 target='_blank'
-                className='flex justify-center items-center w-8 h-8 first:ml-0 ml-4'
+                className='flex justify-center items-center w-7 h-7 first:ml-0 ml-2'
               >
                 <Image
-                  className='flex w-6 h-auto lg:mt-0 mt-6'
+                  className='flex w-7 h-7 lg:mt-0 mt-6'
                   src={media.image}
                   alt={media.alt}
                 />
@@ -108,24 +90,24 @@ export function Footer() {
         </div>
       </div>
 
-      <div className='flex flex-col pt-10 desktop:mt-0 desktop:flex-row gap-4 desktop:gap-0 w-full justify-between items-center '>
+      <div className='flex flex-col py-4 desktop:mt-0 desktop:flex-row gap-8 desktop:gap-0 w-full justify-between items-center '>
         <Link href={'/'}>
           <Image
-            className='w-[6rem]'
+            className='w-[7rem]'
             src={logo}
             alt='Retângulo transparente com o nome Portão e quadrado na cor roxa com o número 3 em branco'
           />
         </Link>
-        <span className='text-[1rem] md:text-[1.3rem] font-normal text-footer-text -ml-20'>
+        <span className='flex w-full desktop:w-auto desktop:justify-start justify-center items-center text-[1.125rem]  font-normal text-footer-text desktop:-ml-20'>
           Junte-se a + de 600 clientes
         </span>
-        <div className='flex w-[95%] sm:w-[90%] md:w-[80%] tablet:w-[70%] lg:w-[60%] desktop:w-[50%] my-12 justify-end items-center '>
+        <div className='flex w-[95%] sm:w-[90%] md:w-[80%] tablet:w-[70%] lg:w-[60%] desktop:w-[50%]  justify-end items-center '>
           <InputEmail />
         </div>
       </div>
 
-      <div className='flex flex-col desktop:flex-row w-full justify-between items-center gap-4 py-4'>
-        <div className='flex justify-center items-center tablet:flex-row lg:hidden gap-4'>
+      <div className='flex flex-col desktop:flex-row w-full justify-between items-center gap-4 lg:gap-2 py-6'>
+        <div className='flex w-full justify-center items-center tablet:flex-row lg:hidden gap-4 lg:gap-2'>
           <Link
             href='https://play.google.com/store/apps/details?id=com.portao3.portao3'
             target='_blank'
@@ -149,16 +131,24 @@ export function Footer() {
             />
           </Link>
         </div>
-        <div className='flex flex-col-reverse lg:flex-row justify-center items-center gap-4 text-[.68rem] sm:text-[.7rem] md:text-[.75rem] tablet:text-[.8rem] lg:text-[.8rem] desktop:text-[.9rem] monitor:text-[1rem] font-light text-footer-tex'>
-          <span>PORTÃO 3 VIAGENS LTDA. - TODOS OS DIREITOS RESERVADOS</span>
-          <Link href='https://uploads-ssl.webflow.com/61a657319f52a6aa0fcfd29b/63b71192010714da30cc0326_Port%C3%A3o%203%20-%20Pol%C3%ADtica%20de%20Privacidade%20(ENG).pdf'>
+        <div className='flex w-full max-w-[72%] text-center lg:text-start flex-col-reverse font-medium lg:flex-row justify-center items-center gap-4 lg:gap-2 text-[.75rem] lg:text-[.9rem] text-second'>
+          <span className='flex w-full lg:max-w-[57.5%] justify-center lg:justify-start  items-center'>
+            PORTÃO 3 VIAGENS LTDA. - TODOS OS DIREITOS RESERVADOS
+          </span>
+          <Link
+            className='flex w-full lg:w-[25%]  justify-center items-center'
+            href='https://uploads-ssl.webflow.com/61a657319f52a6aa0fcfd29b/63b71192010714da30cc0326_Port%C3%A3o%203%20-%20Pol%C3%ADtica%20de%20Privacidade%20(ENG).pdf'
+          >
             POLÍTICA DE PRIVACIDADE
           </Link>
-          <Link href='https://uploads-ssl.webflow.com/61a657319f52a6aa0fcfd29b/63b71192010714da30cc0326_Port%C3%A3o%203%20-%20Pol%C3%ADtica%20de%20Privacidade%20(ENG).pdf'>
+          <Link
+            className='flex w-full lg:w-[22.5%] justify-center items-center'
+            href='https://uploads-ssl.webflow.com/61a657319f52a6aa0fcfd29b/63b71192010714da30cc0326_Port%C3%A3o%203%20-%20Pol%C3%ADtica%20de%20Privacidade%20(ENG).pdf'
+          >
             PRIVACY POLICY
           </Link>
         </div>
-        <div className='hidden lg:flex '>
+        <div className='hidden lg:flex w-full lg:w-[28%] justify-end items-center'>
           <Link
             href='https://play.google.com/store/apps/details?id=com.portao3.portao3'
             target='_blank'

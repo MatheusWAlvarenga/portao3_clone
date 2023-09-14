@@ -46,6 +46,7 @@ export function CardHome_10() {
       <div
         onMouseEnter={() => setHoverElement(true)}
         onMouseLeave={() => setHoverElement(false)}
+        onClick={() => setHoverElement((before) => !before)}
         className='flex flex-col w-full   min-h-[35rem] lg:flex-row gap-12 p-8 justify-center items-center rounded-lg bg-inHover'
       >
         <div className='flex w-full lg:w-1/2 justify-center items-center min-h-[20rem] sm:min-h-[25rem] md:min-h-[28rem] tablet:min-h-[32rem]  lg:min-h-[20rem]'>
@@ -60,10 +61,8 @@ export function CardHome_10() {
               <Image
                 src={image}
                 alt=''
-                className={`flex w-full max-w-[20rem] sm:max-w-[25rem] md:max-w-[27rem] tablet:max-w-[29rem] lg:max-w-[20rem] desktop:max-w-[28rem] monitor:max-w-[30rem] absolute ${
-                  hoverElement
-                    ? 'scale-100  -rotate-45 '
-                    : 'scale:100 lg:scale-90'
+                className={`flex w-full max-w-[20rem]  sm:max-w-[25rem] md:max-w-[27rem] tablet:max-w-[29rem] lg:max-w-[20rem] desktop:max-w-[28rem] monitor:max-w-[30rem] absolute ${
+                  hoverElement ? 'scale-105' : 'scale-90'
                 }  transition-all duration-700 rounded-lg`}
               />
             </div>

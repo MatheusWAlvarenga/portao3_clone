@@ -21,13 +21,13 @@ export function MoreButton({ floating = false }: MoreButtonProps) {
   return (
     <>
       {showMoreButton && (
-        <div className='flex p-5'>
+        <div className='flex w-full justify-center'>
           <Link
             className={`${
               floating
-                ? 'border border-white  hover:border-button-second-border'
-                : 'border-[3px] border-button-second-border'
-            } flex w-max items-center  text-sm monitor:text-[1rem]  hover:border-button-second-hover-border bg-button-second-background hover:bg-button-second-hover-background text-button-second-text hover:text-button-second-hover-text font-semibold px-4 py-2 rounded-lg transition duration-200`}
+                ? 'border border-white  hover:border-button-second-border px-16 py-3 mb-5'
+                : 'border-[3px] border-button-second-border px-4 py-2 '
+            } flex w-max items-center  text-sm monitor:text-[1rem]  hover:border-button-second-hover-border bg-button-second-background hover:bg-button-second-hover-background text-button-second-text hover:text-button-second-hover-text font-semibold rounded-lg transition duration-200`}
             href='/pages/registro/prod-typeform-v3'
           >
             Quero saber mais
