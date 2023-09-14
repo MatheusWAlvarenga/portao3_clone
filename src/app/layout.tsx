@@ -44,7 +44,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <div className='flex desktop:hidden fixed z-30 bottom-1 md:bottom-5 w-full justify-center items-center'>
-            <MoreButton />
+            <MoreButton floating />
           </div>
         </ContextGlobal>
       </body>
