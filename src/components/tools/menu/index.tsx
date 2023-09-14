@@ -143,7 +143,7 @@ export function Menu() {
 
     const item = currentPathId.filter((e) => e != undefined)[0] || 0
     setSelected(item)
-  }, [pathname])
+  }, [pathname, selectCurrent])
 
   function handleEffectInSelectOption(id: number) {
     setEffectSelectOption((before) => (before == id ? 0 : id))
