@@ -1,6 +1,9 @@
 // components
 import { Flags } from './flag'
 
+// context
+import { useContext, useEffect, useRef, useState } from 'react'
+
 // assets
 import flagAccount1 from '@/assets/flag-account-1.png'
 import flagAccount2 from '@/assets/flag-account-2.png'
@@ -11,8 +14,32 @@ import flagCosts from '@/assets/flag-costs.png'
 import flagInsight1 from '@/assets/flag-insight-1.png'
 import flagInsight2 from '@/assets/flag-insight-2.png'
 import flagInsight3 from '@/assets/flag-insight-3.png'
+import { ContextGlobalElements } from '@/context/global'
 
 export function CardHome_2() {
+  const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)
+
+  const [viewFlag, setViewFlag] = useState(false)
+
+  const refFlag = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const viewFlag = refFlag.current?.offsetTop
+        ? refFlag.current?.offsetTop + 100 < window.scrollY + window.innerHeight
+        : false
+
+      setViewFlag((before) => (before == false ? viewFlag : true))
+
+      // reset scrollY
+      resetActualScrollView(
+        refFlag.current?.offsetTop ? refFlag.current?.offsetTop : 0,
+      )
+    }
+
+    handleScroll()
+  }, [scrollY])
+
   const itemList = [
     {
       id: 1,
@@ -60,7 +87,12 @@ export function CardHome_2() {
           orçamentos.
         </p>
       </div>
-      <div className='w-full flex flex-col gap-4  justify-center items-center mt-10 tablet:w-[95%] tablet:grid tablet:grid-cols-2 tablet:mt-16 lg:w-[98%] lg:grid-cols-3 lg:mt-20 desktop:flex  desktop:flex-row'>
+      <div
+        ref={refFlag}
+        className={`${
+          viewFlag ? '' : 'opacity-0'
+        } transition-opacity duration-1000 delay-500 w-full flex flex-col gap-4  justify-center items-center mt-10 tablet:w-[95%] tablet:grid tablet:grid-cols-2 tablet:mt-16 lg:w-[98%] lg:grid-cols-3 lg:mt-20 desktop:flex  desktop:flex-row`}
+      >
         {itemList.map((flag) => {
           return <Flags key={flag.id} props={flag} />
         })}

@@ -1,5 +1,11 @@
+// vendors
+import { useContext, useEffect, useRef, useState } from 'react'
+
 // components
 import { Flag } from './flag'
+
+// contexts
+import { ContextGlobalElements } from '@/context/global'
 
 // assets
 import thirdCard1 from '@/assets/thirdCardHome1.png'
@@ -7,6 +13,29 @@ import thirdCard2 from '@/assets/thirdCardHome2.png'
 import thirdCard3 from '@/assets/thirdCardHome3.png'
 
 export function CardHome_5() {
+  const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)
+
+  const [viewFlag, setViewFlag] = useState(false)
+
+  const refFlag = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const viewFlag = refFlag.current?.offsetTop
+        ? refFlag.current?.offsetTop + 100 < window.scrollY + window.innerHeight
+        : false
+
+      setViewFlag((before) => (before == false ? viewFlag : true))
+
+      // reset scrollY
+      resetActualScrollView(
+        refFlag.current?.offsetTop ? refFlag.current?.offsetTop : 0,
+      )
+    }
+
+    handleScroll()
+  }, [scrollY])
+
   const itemsList = [
     {
       id: 1,
@@ -47,7 +76,12 @@ export function CardHome_5() {
           dois.
         </p>
       </div>
-      <div className='w-full flex flex-col gap-10 justify-center items-center mt-10 md:mt-20 '>
+      <div
+        ref={refFlag}
+        className={`${
+          viewFlag ? '' : 'opacity-0'
+        } transition-opacity duration-1000 delay-500 w-full flex flex-col gap-10 justify-center items-center mt-10 md:mt-20 `}
+      >
         {itemsList.map((card) => {
           return <Flag key={card.id} props={card} />
         })}
