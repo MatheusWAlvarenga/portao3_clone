@@ -57,10 +57,15 @@ export function Footer() {
   return (
     <main className='flex flex-col gap-4 desktop:gap-2 px-[2%] sm:px-[4%] md:px-[8%] tablet:px-[10%] lg:px-[12%] desktop:px-[15%] monitor:px-[22%] py-[1rem] justify-center items-center w-full min-h-[28rem] bg-footer-background  divide-y-2 divide-footer-line pb-14 md:pb-[5rem] desktop:pb-0'>
       <div className='flex flex-col tablet:flex-row gap-3 w-full justify-between items-center py-4'>
-        <div className='flex flex-col-reverse md:flex-row tablet:hidden gap-6 mt-6'>
+        <div className='flex justify-center items-center tablet:hidden mt-6'>
           {linksSocialMedia.map((media) => {
             return (
-              <Link key={media.id} href={media.ref} target='_blank'>
+              <Link
+                key={media.id}
+                href={media.ref}
+                target='_blank'
+                className='flex justify-center items-center w-8 h-8 first:ml-0 ml-8'
+              >
                 <Image
                   className='flex w-6 h-6'
                   src={media.image}
@@ -86,7 +91,12 @@ export function Footer() {
         <div className='hidden tablet:flex gap-6 justify-center items-center'>
           {linksSocialMedia.map((media) => {
             return (
-              <Link key={media.id} href={media.ref} target='_blank'>
+              <Link
+                key={media.id}
+                href={media.ref}
+                target='_blank'
+                className='flex justify-center items-center w-8 h-8 first:ml-0 ml-4'
+              >
                 <Image
                   className='flex w-6 h-auto lg:mt-0 mt-6'
                   src={media.image}
@@ -115,7 +125,7 @@ export function Footer() {
       </div>
 
       <div className='flex flex-col desktop:flex-row w-full justify-between items-center gap-4 py-4'>
-        <div className='flex flex-col-reverse justify-center items-center tablet:flex-row lg:hidden gap-4'>
+        <div className='flex justify-center items-center tablet:flex-row lg:hidden gap-4'>
           <Link
             href='https://play.google.com/store/apps/details?id=com.portao3.portao3'
             target='_blank'
@@ -130,7 +140,7 @@ export function Footer() {
           <Link
             href='https://apps.apple.com/br/app/port%C3%A3o-3/id1502054193'
             target='_blank'
-            className='flex shadow-sm '
+            className='flex shadow-sm ml-4'
           >
             <Image
               className='flex w-auto h-10 rounded-md '
@@ -148,7 +158,7 @@ export function Footer() {
             PRIVACY POLICY
           </Link>
         </div>
-        <div className='hidden lg:flex gap-4'>
+        <div className='hidden lg:flex '>
           <Link
             href='https://play.google.com/store/apps/details?id=com.portao3.portao3'
             target='_blank'
@@ -163,7 +173,7 @@ export function Footer() {
           <Link
             href='https://apps.apple.com/br/app/port%C3%A3o-3/id1502054193'
             target='_blank'
-            className='flex shadow-sm '
+            className='flex shadow-sm ml-4'
           >
             <Image
               className='flex w-auto h-10 rounded-md '
