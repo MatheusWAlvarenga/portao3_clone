@@ -17,25 +17,23 @@ export function AnimatedImage() {
 
   const { scrollY, resetActualScrollView } = useContext(ContextGlobalElements)
 
-  const refAnimatedImage = useRef<HTMLDivElement>(null)
+  const refCardEffect = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
-      const viewAnimatedImage = refAnimatedImage.current?.offsetTop
-        ? refAnimatedImage.current?.offsetTop +
-            refAnimatedImage.current?.clientHeight / 2 <
+      const viewCardEffect = refCardEffect.current?.offsetTop
+        ? refCardEffect.current?.offsetTop +
+            refCardEffect.current?.clientHeight / 2 <
           window.scrollY + window.innerHeight
         : false
 
       setTimeout(() => {
-        setCardEffect((before) => (before == true ? viewAnimatedImage : false))
+        setCardEffect((before) => (before == true ? viewCardEffect : false))
       }, 2000)
 
       // reset scrollY
       resetActualScrollView(
-        refAnimatedImage.current?.offsetTop
-          ? refAnimatedImage.current?.offsetTop
-          : 0,
+        refCardEffect.current?.offsetTop ? refCardEffect.current?.offsetTop : 0,
       )
     }
 
@@ -66,7 +64,7 @@ export function AnimatedImage() {
             : 'duration-300'
         }  transition-all duration-700 delay-1000`}
       />
-      <div ref={refAnimatedImage} className='w-0 h-0' />
+      <div ref={refCardEffect} className='w-0 h-0' />
 
       <Image
         src={phone}
