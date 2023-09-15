@@ -29,7 +29,7 @@ export function AnimatedImage() {
 
       setTimeout(() => {
         setCardEffect((before) => (before == true ? viewCardEffect : false))
-      }, 2000)
+      }, 1000)
 
       // reset scrollY
       resetActualScrollView(
@@ -42,7 +42,7 @@ export function AnimatedImage() {
 
   useEffect(() => {
     setFirstEffect(false)
-  }, [])
+  }, [scrollY])
 
   return (
     <div className='flex w-full px-4 sm:px-0 justify-center items-end '>
@@ -60,7 +60,7 @@ export function AnimatedImage() {
           firstEffect ? 'opacity-0 ' : ' opacity-100'
         } ${
           cardEffect
-            ? 'translate-y-[15%] translate-x-[17%] tablet:translate-y-[10%] tablet:translate-x-[21%]  scale-50 shadow-none'
+            ? 'monitor:translate-y-0 monitor:translate-x-0 monitor:scale-100 translate-y-[15%] translate-x-[17%] tablet:translate-y-[10%] tablet:translate-x-[21%] scale-50 shadow-none'
             : 'duration-300'
         }  transition-all duration-700 delay-1000`}
       />
