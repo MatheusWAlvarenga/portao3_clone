@@ -21,7 +21,11 @@ export function MoreButton({ floating = false }: MoreButtonProps) {
   return (
     <>
       {showMoreButton && (
-        <div className='flex w-full justify-center'>
+        <div
+          className={`${
+            floating ? '' : 'py-5 items-center'
+          } flex w-full justify-center `}
+        >
           <Link
             className={`${
               floating
