@@ -216,6 +216,7 @@ export function Menu() {
                   {item.submenu.map((menu) => {
                     return (
                       <Link
+                        scroll
                         href={menu.href}
                         key={menu.id}
                         className='flex flex-col justify-center items-start'
@@ -248,6 +249,7 @@ export function Menu() {
                 onMouseLeave={() => setHoverItem(0)}
               >
                 <Link
+                  scroll
                   href={item.href}
                   className={` ${
                     hoverItem == item.id
@@ -359,6 +361,7 @@ export function Menu() {
                     } w-[2px]  -mr-2 rounded-xl bg-inHover transition-all duration-500`}
                   />
                   <Link
+                    scroll
                     href={item.href}
                     className={`flex text-sm monitor:text-[1rem] w-full  py-2 px-4 ${
                       selected == item.id

@@ -61,6 +61,7 @@ export function Footer() {
           {linksPage.map((link) => {
             return (
               <Link
+                scroll
                 className='text-[1rem] font-light text-footer-text hover:text-footer-textHover'
                 key={link.id}
                 href={link.ref}
@@ -74,6 +75,7 @@ export function Footer() {
           {linksSocialMedia.map((media) => {
             return (
               <Link
+                scroll
                 key={media.id}
                 href={media.ref}
                 target='_blank'
@@ -137,13 +139,13 @@ export function Footer() {
           </span>
           <Link
             className='flex w-full lg:w-[25%]  justify-center items-center'
-            href='https://uploads-ssl.webflow.com/61a657319f52a6aa0fcfd29b/63b71192010714da30cc0326_Port%C3%A3o%203%20-%20Pol%C3%ADtica%20de%20Privacidade%20(ENG).pdf'
+            href='/'
           >
             POLÍTICA DE PRIVACIDADE
           </Link>
           <Link
             className='flex w-full lg:w-[22.5%] justify-center items-center'
-            href='https://uploads-ssl.webflow.com/61a657319f52a6aa0fcfd29b/63b71192010714da30cc0326_Port%C3%A3o%203%20-%20Pol%C3%ADtica%20de%20Privacidade%20(ENG).pdf'
+            href='/'
           >
             PRIVACY POLICY
           </Link>

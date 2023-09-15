@@ -26,6 +26,7 @@ export function Header() {
           <Link
             className='flex border-[3px] justify-center items-center text-sm monitor:text-[1rem]  border-button-primary-border hover:border-button-primary-hover-border bg-button-primary-background hover:bg-button-primary-hover-background text-button-primary-text hover:text-button-primary-hover-text font-semibold p-5 rounded-lg transition duration-200'
             href='/pages/user/login'
+            scroll
           >
             Login
           </Link>

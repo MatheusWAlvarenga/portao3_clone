@@ -27,6 +27,7 @@ export function MoreButton({ floating = false }: MoreButtonProps) {
           } flex w-full justify-center `}
         >
           <Link
+            scroll
             className={`${
               floating
                 ? 'border border-white  hover:border-button-second-border px-16 py-3 mb-5'
