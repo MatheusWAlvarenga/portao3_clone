@@ -3,9 +3,8 @@
 <h1 align="center">Clone da Home da Portão3 em Next.js</h1>
 
 <div align="center">
-   <img width="700" alt="Portão3 home clone image" src="https://github.com/MatheusWAlvarenga/portao3_clone/assets/94935750/1932abae-838d-41e5-b12d-2775b1851e99">
+   <img width="700" alt="Portão3 home clone image" src="https://github.com/MatheusWAlvarenga/portao3_clone/assets/94935750/ca9632f8-8537-408f-8234-c528639ac7ef">
 </div>
-
 
 Este é um projeto de clone da página inicial da empresa Portão3, desenvolvido em Next.js, utilizando Tailwind CSS e TypeScript. O objetivo deste projeto é demonstrar minhas habilidades em desenvolvimento frontend com Next.js, bem como corrigir erros  e também tornar a página mais atraente para os usuários.
 
