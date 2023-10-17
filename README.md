@@ -7,9 +7,6 @@
 </div>
 
 
-
-# Clone da Home da Portão3 em Next.js
-
 Este é um projeto de clone da página inicial da empresa Portão3, desenvolvido em Next.js, utilizando Tailwind CSS e TypeScript. O objetivo deste projeto é demonstrar minhas habilidades em desenvolvimento frontend com Next.js, bem como corrigir erros  e também tornar a página mais atraente para os usuários.
 
 ## Pré-requisitos
@@ -77,9 +74,6 @@ Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novos 
 4. Envie para o repositório remoto (git push origin minha-feature).
 5. Crie um novo Pull Request.
 
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## Contato
 
